@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
         Move();
     }
 
-    private void Move()
+    public virtual void Move()
     {
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime); 
     }

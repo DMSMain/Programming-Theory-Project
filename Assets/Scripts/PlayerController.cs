@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y < -boundary - 1)
         {
             Destroy(gameObject);
+            alive = false;  
         }
     }
 

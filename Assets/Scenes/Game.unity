@@ -353,6 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1389384640}
   - component: {fileID: 1389384639}
+  - component: {fileID: 1389384641}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -375,11 +376,17 @@ MonoBehaviour:
   obstaclePrefab: {fileID: 4177728231324307583, guid: d13fec577c46ef74aaefde466796c22e, type: 3}
   obstacleSpawnPos: {x: 0, y: 0}
   obstacleSpawnRange: 2.5
+  obstacleStartDelay: 2
+  obstacleRepeatRate: 5
   enemy1Prefab: {fileID: 6884690760127473491, guid: 65948e18b6b75fc4ba52c612d13f87a0, type: 3}
   enemy1SpawnPos: {x: 0, y: 0}
+  enemy1StartDelay: 2
+  enemy1RepeatRate: 5
   enemy1SpawnRange: 2.5
   enemy2Prefab: {fileID: 8081854665236962340, guid: 3f83af94b66069247a6fb5fbb5ff5717, type: 3}
   enemy2SpawnPos: {x: 0, y: 0}
+  enemy2StartDelay: 2
+  enemy2RepeatRate: 5
   enemy2SpawnRangeMin: 0
   enemy2SpawnRangeMax: 8.5
 --- !u!4 &1389384640
@@ -397,3 +404,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389384641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389384638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c970d44d7f522aa43886efcaf815160d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

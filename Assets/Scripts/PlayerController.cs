@@ -6,20 +6,17 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float boundary = 4.4f;
-    private float flyForce = 0.5f; 
+    private float flyForce = 0.5f;
 
-    // Start is called before the first frame update
+    public bool alive { get; private set; }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        alive = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // ABSTRACTION
     void FixedUpdate()
     {
         Jump();
@@ -50,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) 
     {
-        Destroy(gameObject);  
+        Destroy(gameObject);
+        alive = false;  
     }
 }

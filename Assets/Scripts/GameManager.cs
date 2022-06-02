@@ -4,42 +4,37 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // ENCAPSULATION
     [Header("Obstacle")]
-    public GameObject obstaclePrefab;
-    public Vector2 obstacleSpawnPos;
-    public float obstacleSpawnRange = 2.5f;
-    private float obstacleStartDelay = 2;
-    private float obstacleRepeatRate = 5;
+    [SerializeField] private GameObject obstaclePrefab;
+    [SerializeField] private Vector2 obstacleSpawnPos;
+    [SerializeField] private float obstacleSpawnRange = 2.5f;
+    [SerializeField] private float obstacleStartDelay = 2;
+    [SerializeField] private float obstacleRepeatRate = 5;
 
     [Header("Enemy 1")]
 
-    public GameObject enemy1Prefab;
-    public Vector2 enemy1SpawnPos;
-    private float enemy1StartDelay = 2;
-    private float enemy1RepeatRate = 5;
-    public float enemy1SpawnRange = 4.5f;
+    [SerializeField] private GameObject enemy1Prefab;
+    [SerializeField] private Vector2 enemy1SpawnPos;
+    [SerializeField] private float enemy1StartDelay = 2;
+    [SerializeField] private float enemy1RepeatRate = 5;
+    [SerializeField] private float enemy1SpawnRange = 4.5f;
 
     [Header("Enemy 2")]
 
-    public GameObject enemy2Prefab;
-    public Vector2 enemy2SpawnPos;
-    private float enemy2StartDelay = 2;
-    private float enemy2RepeatRate = 5;
-    public float enemy2SpawnRangeMin = 0f;
-    public float enemy2SpawnRangeMax = 8.5f;
+    [SerializeField] private GameObject enemy2Prefab;
+    [SerializeField] private Vector2 enemy2SpawnPos;
+    [SerializeField] private float enemy2StartDelay = 2;
+    [SerializeField] private float enemy2RepeatRate = 5;
+    [SerializeField] private float enemy2SpawnRangeMin = 0f;
+    [SerializeField] private float enemy2SpawnRangeMax = 8.5f;
 
-    // Start is called before the first frame update
+    // ABSTRACTION
     void Start()
     {
         InvokeRepeating("SpawnObstacle", obstacleStartDelay, obstacleRepeatRate);
         InvokeRepeating("SpawnEnemy1", enemy1StartDelay, enemy1RepeatRate);
         InvokeRepeating("SpawnEnemy2", enemy2StartDelay, enemy2RepeatRate);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void SpawnObstacle()
